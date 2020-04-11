@@ -2,25 +2,23 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 
-using namespace cv;
 
 int main()
 {
 
-	Mat img = imread("Test.jpeg");
+	cv::Mat img = imread("test.jpeg");
 
-	int columns = img.cols;
-	int rows = img.rows;
+	unsigned const int columns = img.cols;
+	unsigned const int rows = img.rows;
 
-	std::cout << "Sutunlar : " << columns << std::endl << "Satirlar : " << rows << std::endl;
+	std::cout << "Columns : " << columns << "\n" << "Rows : " << rows << std::endl;
 
-	namedWindow("Image");
+	cv::namedWindow("Image");
+	cv::imshow("Image", img);
 
-	imshow("Image", img);
-
-	waitKey(0);
+	cv::waitKey(0);
 	
-	destroyWindow("Image");
+	cv::destroyWindow("Image");
 
 	return 0;
 }

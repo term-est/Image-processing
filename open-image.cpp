@@ -2,27 +2,24 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 
-using namespace cv;
 
-Mat orgImage;
 
 int main()
 {
-	orgImage = imread("Test.jpeg");
-	namedWindow("Image Display", WINDOW_AUTOSIZE);
+	cv::Mat org_img = cv::imread("test.jpeg");
 
-	if (orgImage.empty())
+	if(org_img.empty())
 	{
-		std::cout << "Image could not upload \n";
-		return -1;
-	}
-	else
-	{
-		imshow("Image Display", orgImage);
-		waitKey(0);
-		destroyWindow("Image Display");
+		std::cerr << "Image could not be displayed \n";
+		return EXIT_FAILURE;
 	}
 
-	return 0;
+		cv::namedWindow("Image Display", cv::WINDOW_AUTOSIZE);
+		cv::imshow("Image Display", org_img);
+
+		cv::waitKey(0);
+		cv::destroyWindow("Image Display");
+
+	return EXIT_SUCCESS;
 }
 

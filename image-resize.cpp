@@ -3,34 +3,31 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include <iostream>
 
-using namespace cv;
 
-Mat newsize;
 
 int main()
 {
-	Mat img1 = imread("gradyan.bmp");
-	Mat img2 = imread("Test.jpeg");
 
-	resize(img1, newsize, Size(img2.cols, img2.rows));
+	cv::Mat img1 = imread("test.jpeg"), img2 = imread("gradyan.bmp");
 
-	namedWindow("Image1", WINDOW_AUTOSIZE);
-	namedWindow("Image2", WINDOW_AUTOSIZE);
-	namedWindow("ResizeImage", WINDOW_AUTOSIZE);
+	cv::resize(img1, Mat(), Size(img2.cols, img2.rows));
+
+	cv::namedWindow("Image1", cv::WINDOW_AUTOSIZE);
+	cv::namedWindow("Image2", cv::WINDOW_AUTOSIZE);
+	cv::namedWindow("ResizeImage", cv::WINDOW_AUTOSIZE);
 	
 
 
-	while (true)
+	while(true)
 	{
-		imshow("Image1", img1);
-		imshow("Image2", img2);
-		imshow("ResizeImage", newsize);
+		cv::imshow("Image1", img1);
+		cv::imshow("Image2", img2);
+		cv::imshow("ResizeImage", Mat());
 
-		if (waitKey(30) == 27)
-		{
-			break;
-		}
+		if(cv::waitKey(30) == 27)	break;
 	}
-	destroyAllWindows();
-	return 0;
+
+	cv::destroyAllWindows();
+
+	return EXIT_SUCCESS;
 }
