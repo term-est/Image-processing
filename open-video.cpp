@@ -2,35 +2,36 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 
-using namespace cv;
 
 int main()
 {
-	VideoCapture vid("1280.mp4");
-	namedWindow("Video", WINDOW_AUTOSIZE);
+	cv::VideoCapture vid("1280.mp4");
+	cv::namedWindow("Video", cv::WINDOW_AUTOSIZE);
 
-	float fps = vid.get(CAP_PROP_FPS);
+	double fps = vid.get(CAP_PROP_FPS);
 
 	std::cout << fps << "\n";
 
-	if (!vid.isOpened())
+	if(!vid.isOpened())
 	{
-		std::cout << "Wrong Path!" << "\n";
+		std::cerr << "File could not be read" << "\n";
+		return EXIT_FAILURE;
 	}
 
-	while (true)
+	while(true)
 	{
-		Mat video;
+		cv::Mat video;
 
 		bool frame = vid.read(video);
 
-		if (waitKey(30) == 27 || frame == 0) {
-			destroyWindow("Video");
+		if (cv::waitKey(30) == 27 || !frame)
+		{
+			cv::destroyWindow("Video");
 			break;
 		}
 
-		imshow("Video", video);
+		cv::imshow("Video", video);
 	}
 
-	return 0;
+	return EXIT_SUCCESS;
 }

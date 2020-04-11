@@ -2,24 +2,24 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
 
-using namespace cv;
+
 
 int main()
 {
-	VideoCapture cap(0);
+	cv::VideoCapture capture(0);
 
-	if (!cap.open(0))	return -1;
+	if(!cap.open(0))	return EXIT_FAILURE;
 
 	while (true)
 	{
-		Mat frame;
+		cv::Mat frame;
 
-		cap >> frame;
+		capture >> frame;
 
-		if (waitKey(30) == 27 || frame.empty()) break;
+		if(cv::waitKey(30) == 27 || frame.empty())	break;
 
-		imshow("Webcam Window", frame);
+		cv::imshow("Webcam Window", frame);
 	}
 
-	return 0;
+	return EXIT_SUCCESS;
 }
