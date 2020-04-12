@@ -14,11 +14,11 @@ int main()
 		return EXIT_FAILURE;
 	}
 
-		cv::namedWindow("Image Display", cv::WINDOW_AUTOSIZE);
-		cv::imshow("Image Display", org_img);
+	cv::namedWindow("Image Display", cv::WINDOW_AUTOSIZE);
+	cv::imshow("Image Display", org_img);
 
-		cv::waitKey(0);
-		cv::destroyWindow("Image Display");
+	cv::waitKey(0);
+	cv::destroyWindow("Image Display");
 
 	return EXIT_SUCCESS;
 }

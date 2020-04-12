@@ -1,6 +1,7 @@
+#include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <iostream>
+
 
 
 
@@ -8,9 +9,13 @@ int main()
 {
 	cv::VideoCapture capture(0);
 
-	if(!cap.open(0))	return EXIT_FAILURE;
+	if(!capture.open(0))	
+	{
+		std::cerr << "Failure" << std::endl;
+		return EXIT_FAILURE;
+	}
 
-	while (true)
+	while(true)
 	{
 		cv::Mat frame;
 

@@ -1,12 +1,12 @@
+#include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <iostream>
 
 
 int main()
 {
 
-	cv::Mat img = imread("test.jpeg");
+	cv::Mat img = cv::imread("test.jpeg");
 
 	unsigned const int columns = img.cols;
 	unsigned const int rows = img.rows;

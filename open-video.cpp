@@ -1,16 +1,12 @@
+#include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <iostream>
 
 
 int main()
 {
 	cv::VideoCapture vid("1280.mp4");
-	cv::namedWindow("Video", cv::WINDOW_AUTOSIZE);
 
-	double fps = vid.get(CAP_PROP_FPS);
-
-	std::cout << fps << "\n";
 
 	if(!vid.isOpened())
 	{
@@ -18,20 +14,23 @@ int main()
 		return EXIT_FAILURE;
 	}
 
-	while(true)
+	cv::namedWindow("Video", cv::WINDOW_AUTOSIZE);
+
+	float fps = vid.get(cv::CAP_PROP_FPS);
+
+	std::cout << fps << "\n";
+
+
+	cv::Mat video;
+	bool frame = vid.read(video);
+
+	while(cv::waitKey(30) != 27 && frame)
 	{
-		cv::Mat video;
-
-		bool frame = vid.read(video);
-
-		if (cv::waitKey(30) == 27 || !frame)
-		{
-			cv::destroyWindow("Video");
-			break;
-		}
-
 		cv::imshow("Video", video);
+		frame = vid.read(video);
 	}
+
+	cv::destroyWindow("Video");
 
 	return EXIT_SUCCESS;
 }
