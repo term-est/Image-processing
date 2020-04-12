@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.8)
+project( DisplayImage )
+set(OpenCV_STATIC ON)
+set(CMAKE_SHARED_LINKER_FLAGS "-static -static-libgcc -static-libstdc++" CACHE INTERNAL "" FORCE)
+find_package( OpenCV REQUIRED PATHS "../lib/install/static")
+add_executable( DisplayImage hct.cpp )
+target_link_libraries( DisplayImage ${OpenCV_LIBS} )
