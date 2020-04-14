@@ -1,3 +1,0 @@
-C:/technofest_st_git/Image-processing/CMakeFiles/DisplayImage.dir
-C:/technofest_st_git/Image-processing/CMakeFiles/edit_cache.dir
-C:/technofest_st_git/Image-processing/CMakeFiles/rebuild_cache.dir
