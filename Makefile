@@ -139,32 +139,59 @@ DisplayImage/fast:
 	$(MAKE) -f CMakeFiles\DisplayImage.dir\build.make CMakeFiles/DisplayImage.dir/build
 .PHONY : DisplayImage/fast
 
-open-video.obj: open-video.cpp.obj
+image_processing.obj: image_processing.cpp.obj
 
-.PHONY : open-video.obj
+.PHONY : image_processing.obj
 
 # target to build an object file
-open-video.cpp.obj:
-	$(MAKE) -f CMakeFiles\DisplayImage.dir\build.make CMakeFiles/DisplayImage.dir/open-video.cpp.obj
-.PHONY : open-video.cpp.obj
+image_processing.cpp.obj:
+	$(MAKE) -f CMakeFiles\DisplayImage.dir\build.make CMakeFiles/DisplayImage.dir/image_processing.cpp.obj
+.PHONY : image_processing.cpp.obj
 
-open-video.i: open-video.cpp.i
+image_processing.i: image_processing.cpp.i
 
-.PHONY : open-video.i
+.PHONY : image_processing.i
 
 # target to preprocess a source file
-open-video.cpp.i:
-	$(MAKE) -f CMakeFiles\DisplayImage.dir\build.make CMakeFiles/DisplayImage.dir/open-video.cpp.i
-.PHONY : open-video.cpp.i
+image_processing.cpp.i:
+	$(MAKE) -f CMakeFiles\DisplayImage.dir\build.make CMakeFiles/DisplayImage.dir/image_processing.cpp.i
+.PHONY : image_processing.cpp.i
 
-open-video.s: open-video.cpp.s
+image_processing.s: image_processing.cpp.s
 
-.PHONY : open-video.s
+.PHONY : image_processing.s
 
 # target to generate assembly for a file
-open-video.cpp.s:
-	$(MAKE) -f CMakeFiles\DisplayImage.dir\build.make CMakeFiles/DisplayImage.dir/open-video.cpp.s
-.PHONY : open-video.cpp.s
+image_processing.cpp.s:
+	$(MAKE) -f CMakeFiles\DisplayImage.dir\build.make CMakeFiles/DisplayImage.dir/image_processing.cpp.s
+.PHONY : image_processing.cpp.s
+
+test.obj: test.cpp.obj
+
+.PHONY : test.obj
+
+# target to build an object file
+test.cpp.obj:
+	$(MAKE) -f CMakeFiles\DisplayImage.dir\build.make CMakeFiles/DisplayImage.dir/test.cpp.obj
+.PHONY : test.cpp.obj
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) -f CMakeFiles\DisplayImage.dir\build.make CMakeFiles/DisplayImage.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) -f CMakeFiles\DisplayImage.dir\build.make CMakeFiles/DisplayImage.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 # Help Target
 help:
@@ -175,9 +202,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... DisplayImage
-	@echo ... open-video.obj
-	@echo ... open-video.i
-	@echo ... open-video.s
+	@echo ... image_processing.obj
+	@echo ... image_processing.i
+	@echo ... image_processing.s
+	@echo ... test.obj
+	@echo ... test.i
+	@echo ... test.s
 .PHONY : help
 
 
