@@ -26,4 +26,24 @@ void open_webcam();
 
 void sierpinski();
 
+void empty_image();
+
+void empty_gray_image();
+
+void binary_image(std::string filename);
+
+void merge_split(std::string filename);
+
+void negative_image(std::string filename);
+
+void reach_pixel(std::string filename);
+
+void recolor_image(std::string filename);
+
+void gray_image_intensity(std::string filename);
+
+void image_contrast(std::string filename);
+
+void image_contrast_manuel(std::string filename);
+
 #endif
